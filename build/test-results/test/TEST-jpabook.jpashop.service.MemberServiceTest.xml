@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jpabook.jpashop.service.MemberServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-09-30T02:27:52" hostname="sin-eunsuui-MacBookPro.local" time="0.15">
+  <properties/>
+  <testcase name="중복_회원_예외" classname="jpabook.jpashop.service.MemberServiceTest" time="0.145"/>
+  <testcase name="회원가입" classname="jpabook.jpashop.service.MemberServiceTest" time="0.003"/>
+  <system-out><![CDATA[2024-09-30T11:27:52.262+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+2024-09-30T11:27:52.263+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Shin]
+2024-09-30T11:27:52.263+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272263 | took 0ms | statement | connection 6| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name='Shin';
+2024-09-30T11:27:52.264+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
+2024-09-30T11:27:52.265+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272265 | took 0ms | statement | connection 6| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+select next value for member_seq
+select next value for member_seq;
+2024-09-30T11:27:52.276+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : insert into member (city,street,zipcode,name,member_id) values (?,?,?,?,?)
+2024-09-30T11:27:52.277+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [null]
+2024-09-30T11:27:52.277+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [null]
+2024-09-30T11:27:52.277+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [null]
+2024-09-30T11:27:52.277+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [Shin]
+2024-09-30T11:27:52.277+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [1]
+2024-09-30T11:27:52.278+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272278 | took 0ms | statement | connection 6| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+insert into member (city,street,zipcode,name,member_id) values (?,?,?,?,?)
+insert into member (city,street,zipcode,name,member_id) values (NULL,NULL,NULL,'Shin',1);
+2024-09-30T11:27:52.279+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+2024-09-30T11:27:52.279+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Shin]
+2024-09-30T11:27:52.279+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272279 | took 0ms | statement | connection 6| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name='Shin';
+2024-09-30T11:27:52.282+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272282 | took 0ms | rollback | connection 6| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+
+;
+2024-09-30T11:27:52.286+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+2024-09-30T11:27:52.286+09:00 TRACE 3208 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Shin]
+2024-09-30T11:27:52.287+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272287 | took 0ms | statement | connection 7| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name='Shin';
+2024-09-30T11:27:52.287+09:00 DEBUG 3208 --- [    Test worker] org.hibernate.SQL                        : select next value for member_seq
+2024-09-30T11:27:52.287+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272287 | took 0ms | statement | connection 7| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+select next value for member_seq
+select next value for member_seq;
+2024-09-30T11:27:52.288+09:00  INFO 3208 --- [    Test worker] p6spy                                    : #1727663272288 | took 0ms | rollback | connection 7| url jdbc:h2:mem:05ac9ea6-b816-42c5-9a5c-3752e4ac6983
+
+;
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
